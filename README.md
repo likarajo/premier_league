@@ -27,23 +27,11 @@ To predict the result of every fixture
 ## Import Dataset
 
 * Read all the data files from previous seasons
-* Concatenate the data from the files together
-* Import the concatenated data into a data frame
+* Read only required columns
+  * Detailed description: https://www.football-data.co.uk/notes.txt
 
-### Obtain team names
-
-* Read the current season's data file
-* Obtain the list of home teams from the records
-* Find the unique teams from the home teams list
-
-## Data Preprocessing
-
-### Keep Required columns
-
-Detailed description: https://www.football-data.co.uk/notes.txt
-
+```
 * Date = Match Date (dd/mm/yy)
-* Referee = Match Referee
 * HomeTeam = Home Team
 * AwayTeam = Away Team
 * HTHG = Half Time Home Team Goals
@@ -64,10 +52,80 @@ Detailed description: https://www.football-data.co.uk/notes.txt
 * AY = Away Team Yellow Cards
 * HR = Home Team Red Cards
 * AR = Away Team Red Cards
+```
+
+* Concatenate the data from the files together
+* Import the concatenated data into a data frame
+
+### Obtain team names
+
+* Read the current season's data file
+* Obtain the list of home teams from the records
+* Find the unique teams from the home teams list
+
+---
+
+## Data Analysis
+
+[data_analysis.ipynb](data_analysis.ipynb)
+
+### Home Team Win Rate
+
+* Total matches: 7430
+* Total Home team wins: 3449
+* Home wins rate: 46.42 %
+
+### Team Statistics
+
+* Games
+* Wins
+* Win Rate
+* Losses
+* Draws  
+* Goals scored
+* Scoring rate
+* Goals conceded
+* Shots
+* Shots on Target
+* Shots against
+* Fouls
+* Yellow Cards
+* Red Cards
+
+[team_stats.csv](data/team_stats.csv)
+
+---
+
+## Data Preprocessing
+
+### Keep records of only the teams in the current season
 
 ### Prepare features and labels
 
-* Features = all columns except 'Date', 'Referee', 'HTR', 'FTR'
+* Features: all columns except 'Date', 'HTR', 'FTR'
+
+```
+18 Features
+HomeTeam
+AwayTeam
+HTHG
+HTAG
+FTHG
+FTAG
+HS
+AS
+HST
+AST
+HC
+AC
+HF
+AF
+HY
+AY
+HR
+AR
+```
+
 * Labels = 'FTR'
 
 ### Scale and standardise the features
