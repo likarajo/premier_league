@@ -67,7 +67,7 @@ To predict the result of every fixture
 
 ## Data Analysis
 
-[data_analysis.ipynb](data_analysis.ipynb)
+[data_analysis.ipynb](ooks/notebdata_analysis.ipynb)
 
 ### Home Team Win Rate
 
@@ -92,7 +92,7 @@ To predict the result of every fixture
 * Yellow Cards
 * Red Cards
 
-[team_stats.csv](data/team_stats.csv)
+[team_stats.csv](data/statistics/team_stats.csv)
 
 ---
 
@@ -172,8 +172,4 @@ Classifiers:
 * Preprocess the set
 * Make predictions
 
-
-
-
-
-
+[predictions.csv](data/predictions/predictions.csv)
